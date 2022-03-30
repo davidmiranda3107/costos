@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    template="/templates/templateLogin.xhtml">
+	<ui:define name="content">
+			<h:form id="frm">
+				<div align="center">
+					<br /> <br /> <br /> <br /> <br />
+					<p:panel header="Ingreso al Sistema"
+						style="height:230px;width:450px;">
+						<p:focus for="usuario" />
+						<h:panelGrid columns="1" style="text-align: center;">
+							<h:panelGroup>
+								<h:panelGrid columns="2">
+									<h:graphicImage value="/resources/images/user-info.png" />
+									<h:panelGrid columns="2" style="text-align: left">
+										<h:outputText value="Usuario" />
+										<p:inputText id="usuario" value="#{loginMB.usuario}"
+											required="true" requiredMessage="Debe ingresar usuario" converter="upperConverter"
+											style="text-transform: uppercase"/>
+										<h:outputText value="Clave" />
+										<p:password id="clave" value="#{loginMB.clave}"
+											required="true" requiredMessage="Debe ingresar clave" />
+										<h:outputText value="" />
+										<h:panelGroup layout="block"
+											style="font-size: 11px;text-align:right;align: right">
+											<p:commandButton value="Cambiar Clave" process="@this, usuario"
+												action="/changepass.xhtml?faces-redirect=true" />
+										</h:panelGroup>
+									</h:panelGrid>
+								</h:panelGrid>
+							</h:panelGroup>
+						</h:panelGrid>
+						<p:commandButton id="ingresar" value="Ingresar" ajax="false"
+							action="#{loginMB.onLogin}" />
+						<p:commandButton id="limpiar" value="Limpiar" type="reset"
+							immediate="true" />
+						<p:defaultCommand target="ingresar" />
+					</p:panel>
+				</div>
+			</h:form>
+		</ui:define>
+</ui:composition>

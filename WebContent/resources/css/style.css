@@ -1,0 +1,85 @@
+body {
+	background-image: url("#{resource['images/background.jpg']}");
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+	font-size: 12px;
+	font-family: sans-serif;
+}
+
+#layout {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #58ACFA;
+	background-color: #FFFFFF;
+	width: 95%;
+}
+
+#content {
+	width: auto;
+	min-height: 550px;
+	overflow: auto;
+	background-color: #FFFFFF;
+	/*padding-top: 5px;
+	padding-bottom: 3px;*/
+}
+
+#sistema {
+	font-size: 24px;
+	color: #006600;
+	/*color: #5BB759;*/
+	/*color: #214489;*/
+}
+
+#institucion {
+	font-size: 24px;
+	color: #006600;
+}
+
+#pie {
+	font-size: 16px;
+	color: #006600;
+	font-weight: bold;
+}
+
+/** PanelMenu **/
+.ui-panelmenu {
+	width: auto;
+	font-size: 12px;
+	font-family: sans-serif;
+	vertical-align: top;
+}
+
+.tituloPantalla { /*float: left;*/
+	font-weight: bold;
+	font-size: 13px;
+	width: auto;
+	text-align: center;
+}
+
+/************************************************************************************************
+************************ESTILO DE FORMULARIOS****************************************************
+*************************************************************************************************/
+.input-text-upper {
+	text-transform: uppercase;
+}
+
+.input-text-readonly {
+	background-color: #FFFAE2 !important;
+	font-weight: bold;
+}
+
+.borderless tr td {
+	padding: 0px !important; 
+	border: 0px !important; 
+	border-spacing: 0px !important;
+}
+
+.borderless-pg td, .borderless-pg tr {
+	border: 0px !important;
+	border-width: 0px !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;		
+}

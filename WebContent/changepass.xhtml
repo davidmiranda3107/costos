@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/template.xhtml">
+	<ui:define name="content">
+		<h:form id="frm">
+				<div align="center">
+					<br /> <br /> <br />
+					<p:panel header="Cambiar Clave de Acceso"
+						style="height:400px;width:450px;">
+						<p:focus for="clave" />
+						<h:panelGrid columns="1" style="text-align: center;">
+							<h:panelGroup>
+								<h:panelGrid columns="2" style="text-align: left">
+									<h:outputText value="Usuario" />
+									<p:inputText id="usuario" value="#{loginMB.usuario}"
+										required="true" disabled="true"
+										requiredMessage="Usuario es necesario para cambiar clave" />
+									<h:outputText value="Clave Actual" />
+									<p:password id="clave" value="#{loginMB.clave}" required="true"
+										requiredMessage="Debe ingresar clave actual" />
+									<h:outputText value="Nueva Clave" />
+									<p:password id="nueva" value="#{loginMB.claveNueva}"
+										required="true" requiredMessage="Debe ingresar nueva clave" />
+									<h:outputText value="Confirmar Clave" />
+									<p:password id="confirmar" value="#{loginMB.claveConfirmada}"
+										required="true" requiredMessage="Debe confirmar nueva clave" />
+								</h:panelGrid>
+							</h:panelGroup>
+						</h:panelGrid>
+						<p:commandButton id="cambiar" value="Cambiar"
+							action="#{loginMB.onChangePasswd}" ajax="false" />
+						<p:defaultCommand target="cambiar" />
+						<br />
+						<br />
+						<br />
+						<div align="center">
+							<h:outputText value="Recomendaciones para el Cambio de Clave"
+								style="text-align:center;font-size:14px;font-weight:bold;" />
+							<h:panelGrid columns="1">
+								<br />
+								<h:outputText value="1. Debe contener almenos 8 caracteres."
+									style="text-align:left;" />
+								<h:outputText
+									value="2. Debe contener almenos una Letra Mayúscula."
+									style="text-align:left;" />
+								<h:outputText value="3. Debe contener almenos un Número."
+									style="text-align:left;" />
+								<h:outputText value="4. No debe ser igual a la clave anterior."
+									style="text-align:left;" />
+								<h:outputText value="5. No debe contener espacios es blanco."
+									style="text-align:left;" />
+							</h:panelGrid>
+						</div>
+					</p:panel>
+				</div>
+			</h:form>
+	</ui:define>
+</ui:composition>
